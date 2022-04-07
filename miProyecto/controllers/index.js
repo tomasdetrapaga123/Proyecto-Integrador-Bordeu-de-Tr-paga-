@@ -1,4 +1,4 @@
-const dataProducts = require('../db/productsData')
+const dataGeneral = require('../db/generalData')
 
 const controladores = {
     index:function(req, res, next) {
