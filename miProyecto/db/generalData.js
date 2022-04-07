@@ -78,6 +78,21 @@ const data = {
         imageName: 'imageArgentina',
     },
 
+    {
+        id: 9,
+        name: 'Camiseta Atlético de Madrid',
+        description: 'Camiseta del Atlético de Madrid',
+        imageName: 'imageAtleticoMadrid',
+    },
+
+    {
+        id: 10,
+        name: 'Camiseta Paris-Saint Germain',
+        description: 'Camiseta del Paris-Saint Germain',
+        imageName: 'imagePSG',
+    },
+
+
     ]
 
 }
