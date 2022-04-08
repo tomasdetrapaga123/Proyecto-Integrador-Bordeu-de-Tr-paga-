@@ -17,9 +17,7 @@ const controladores = {
         return res.render('search-results', { title: 'Search-Results'})
     },
 
-    products:function(req, res) {
-        return res.render('product', { title: 'Product'})
-    },
+
 
 }
 
