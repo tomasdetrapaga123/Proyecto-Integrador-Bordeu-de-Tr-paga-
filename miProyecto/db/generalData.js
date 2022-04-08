@@ -1,27 +1,56 @@
 const data = {
-    users: [ {
-        id: 1,
+    user:  {
         name: 'Tomás',
         email: 'tdetrapaga@udesa.edu.ar',
         password: '12345',
+    },
+
+    comments: [ {
+        id: 1,
+        userName: 'Tomás de Trápaga',
+        textoDelComentario: '',
+        imagenDelPerfil: '',
     },
 
     {
         id: 2,
-        name: 'Marcos',
-        email: 'mbordeu@udesa.edu.ar',
-        password: '123456',
+        userName: 'Marcos Bordeu',
+        textoDelComentario: '',
+        imagenDelPerfil: '',
     },
 
     {
         id: 3,
-        name: 'Tomás',
-        email: 'tdetrapaga@udesa.edu.ar',
-        password: '12345',
-    }, 
-        
+        userName: 'Miguel Guerrero',
+        textoDelComentario: '',
+        imagenDelPerfil: '',
+    },
+
+    {
+        id: 4,
+        userName: 'Felipe Floria',
+        textoDelComentario: '',
+        imagenDelPerfil: '',
+    },
+
+    {
+        id: 5,
+        userName: 'Rafael Larreta',
+        textoDelComentario: '',
+        imagenDelPerfil: '',
+    },
+
+    {
+        id: 6,
+        userName: 'Franco Ferrero',
+        textoDelComentario: '',
+        imagenDelPerfil: '',
+    },
+
+
+
     ],
-    comments: [],
+
     products: [ {
         id: 1,
         name: 'Camiseta Inter',
