@@ -3,6 +3,9 @@ const data = {
         name: 'Tomás',
         email: 'tdetrapaga@udesa.edu.ar',
         password: '12345',
+        cantidadDeSeguidores: 1,
+        cantidadDeComentarios: 1,
+        cantidadDeProductos: 1,
     },
 
     comments: [ {
@@ -125,5 +128,7 @@ const data = {
     ]
 
 }
+
+module.exports = data
 
 
