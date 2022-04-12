@@ -11,7 +11,7 @@ router.get('/register', controller.register);
 router.get('/login', controller.login);
 router.get('/search', controller.search);
 router.use('/users', usersRouter);
-router.use('/products', productsRouter);
+router.use('/product', productsRouter);
 
 
 module.exports = router;
