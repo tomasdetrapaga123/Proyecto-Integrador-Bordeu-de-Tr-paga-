@@ -11,42 +11,42 @@ const data = {
     comments: [ {
         id: 1,
         userName: 'Tomás de Trápaga',
-        textoDelComentario: '',
+        textoDelComentario: 'Muy linda la camiseta',
         imagenDelPerfil: '',
     },
 
     {
         id: 2,
         userName: 'Marcos Bordeu',
-        textoDelComentario: '',
+        textoDelComentario: 'No me gusto mucho la camiseta',
         imagenDelPerfil: '',
     },
 
     {
         id: 3,
         userName: 'Miguel Guerrero',
-        textoDelComentario: '',
+        textoDelComentario: 'Estaba buscando una camiseta nueva y se nota que ya está usada',
         imagenDelPerfil: '',
     },
 
     {
         id: 4,
         userName: 'Felipe Floria',
-        textoDelComentario: '',
+        textoDelComentario: 'Cual es el precio? Muy linda!',
         imagenDelPerfil: '',
     },
 
     {
         id: 5,
         userName: 'Rafael Larreta',
-        textoDelComentario: '',
+        textoDelComentario: '¿Tienen la camiseta titular actual del equipo?',
         imagenDelPerfil: '',
     },
 
     {
         id: 6,
         userName: 'Franco Ferrero',
-        textoDelComentario: '',
+        textoDelComentario: 'Me gusto mucho!',
         imagenDelPerfil: '',
     },
 
