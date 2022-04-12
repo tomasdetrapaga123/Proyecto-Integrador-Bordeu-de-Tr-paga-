@@ -3,12 +3,12 @@ const dataGeneral = require('../db/generalData')
 const controladores = {
 
     products:function(req, res) {
-        const {id} = req.params
+        const {id} = req.query
         const product = dataGeneral.products.find (function (product) {
             return product.id === Number(id)
         });
-        console.log(product)
-        return res.render('product', { title: 'Product'})
+        
+        return res.render('product', product)
         
     },
 

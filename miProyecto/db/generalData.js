@@ -58,70 +58,70 @@ const data = {
         id: 1,
         name: 'Camiseta Inter',
         description: 'Camiseta del Inter de Milan alternativa',
-        imageName: 'imageMilan',
+        imageName: 'imageMilan.jpg',
     },
 
     {
         id: 2,
         name: 'Camiseta Independiente',
         description: 'Camiseta de Independiente retro',
-        imageName: 'imageIndependiente',
+        imageName: 'imageIndependiente.jpg',
     },
 
     {
         id: 3,
         name: 'Camiseta Holanda',
         description: 'Camiseta de Holanda retro',
-        imageName: 'imageHolanda',
+        imageName: 'imageHolanda.jpg',
     },
 
     {
         id: 4,
         name: 'Camiseta Barcelona',
         description: 'Camiseta del Barcelona alternativa',
-        imageName: 'imageBarcelona',
+        imageName: 'imageBarcelona.jpg',
     },
 
     {
         id: 5,
         name: 'Camiseta Manchester City',
         description: 'Camiseta del Manchester City titular',
-        imageName: 'imageManCity',
+        imageName: 'imageManCity.jpg',
     },
 
     {
         id: 6,
         name: 'Camiseta Real Madrid',
         description: 'Camiseta del Real Madrid',
-        imageName: 'imageRealMadrid',
+        imageName: 'imageRealMadrid.jpg',
     },
 
     {
         id: 7,
         name: 'Camiseta Liverpool',
         description: 'Camiseta del Liverpool alternativa',
-        imageName: 'imageLiverpool',
+        imageName: 'imageLiverpool.jpg',
     },
 
     {
         id: 8,
         name: 'Camiseta Argentina',
         description: 'Camiseta de Argentina retro',
-        imageName: 'imageArgentina',
+        imageName: 'imageArgentina.jpg',
     },
 
     {
         id: 9,
         name: 'Camiseta Atlético de Madrid',
         description: 'Camiseta del Atlético de Madrid',
-        imageName: 'imageAtleticoMadrid',
+        imageName: 'imageAtleticoMadrid.jpg',
     },
 
     {
         id: 10,
         name: 'Camiseta Paris-Saint Germain',
         description: 'Camiseta del Paris-Saint Germain',
-        imageName: 'imagePSG',
+        imageName: 'imagePSG.jpg',
     },
 
 

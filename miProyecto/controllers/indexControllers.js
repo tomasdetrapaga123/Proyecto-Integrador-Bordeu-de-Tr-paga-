@@ -2,7 +2,8 @@ const dataGeneral = require('../db/generalData')
 
 const controladores = {
     index:function(req, res, next) {
-        return res.render('index', { title: 'Express' });
+        const novedades = dataGeneral.products.slice(0,4)
+        return res.render('index', { title: 'Express', novedades});
     },
 
     register:function(req, res) {
