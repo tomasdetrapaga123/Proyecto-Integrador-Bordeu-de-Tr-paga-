@@ -1,4 +1,3 @@
-const data = require('../db/generalData');
 const dataGeneral = require('../db/generalData')
 
 const controladores = {
@@ -12,8 +11,21 @@ const controladores = {
 
             }
         }
-        
-        return res.render('product', product)
+        const comments  = [];
+
+        for (let i = 0; i < dataGeneral.comments.length; i ++){
+            if(dataGeneral.comments[i].productId = product.id){
+                comments.push(dataGeneral.comments[i]);
+            }
+        }
+
+        return res.render('product', {
+            id: product.id, 
+            name: product.name, 
+            description: product.description,
+            imageName: product.imageName,
+            comments
+         });
         
     },
 
