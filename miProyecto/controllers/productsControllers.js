@@ -1,12 +1,17 @@
+const data = require('../db/generalData');
 const dataGeneral = require('../db/generalData')
 
 const controladores = {
 
     products:function(req, res) {
-        const {id} = req.query
-        const product = dataGeneral.products.find (function (product) {
-            return product.id === Number(id)
-        });
+        const {id} = req.params
+        let product = false
+        for (let index = 0; index < dataGeneral.products.length; index++) {
+            const element = dataGeneral.products[index];
+            if (element.id == id) { product = element
+
+            }
+        }
         
         return res.render('product', product)
         
