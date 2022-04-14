@@ -4,13 +4,13 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
+  --yellow: #000000;
+  --dark-blue: #085a5a;
+  --light-blue: #ffffff;
+  --white: #f7f7f7;
+  --light-gray: #756d6d;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Helvetica', sans-serif
 }
 
 
@@ -27,7 +27,7 @@ body {
 }
 
 body {
-  font-family: var(--base-font-family);
+  font-family:'Times New Roman', Times, serif;
   font-weight: 300;
   background-color: var(--light-gray);
 }
@@ -39,10 +39,16 @@ ol {
   padding: 0;
 }
 
+li {
+  display: inline-block;
+  text-decoration: none;
+  color:#fff;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color:#fff;
 }
 
 figure {
@@ -65,10 +71,24 @@ hr {
 }
 
 
+
 /*====== Main Header ======*/
+
+.titulo {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  
+}
+
 .main-header {
   padding: 15px 0;
   background-color: var(--yellow);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .main-header_home-link,
@@ -154,7 +174,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/foto-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -166,16 +186,18 @@ hr {
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
+  background-color: #413d3d;
 }
 
 .products-title {
+  font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
   font-size: 2.4em;
-  font-weight: 400;
-  color: var(--gray);
+  font-weight: 500;
+  color: var(--white);
 }
 
 .product-box {
-  background-color: #ffffff;
+  background-color: #000000;
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
@@ -259,9 +281,10 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 20px 0;
   margin-top: 80px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer-data {
@@ -274,13 +297,19 @@ hr {
 }
 
 .footer-data h2 {
-  color: var(--gray);
+  color: var(--white);
   font-size: 2.4em;
   font-weight: 400;
 }
 
+.footer-data h3 {
+  color: var(--white);
+  font-size: 2.0em;
+  font-weight: 400;
+}
+
 .footer-data p {
-  color: var(--gray);
+  color: var(--white);
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -458,6 +487,7 @@ textarea.form-input {
   border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
   font-size: 16px;
+  color: #fff;
 }
 
 .foto-perfil{
@@ -467,6 +497,7 @@ textarea.form-input {
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .btn{

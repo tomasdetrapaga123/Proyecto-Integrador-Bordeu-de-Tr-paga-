@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="/images/logoTemplo.png" />
 	
-	<title> Mercado Liebre Argentina</title>
+	<title>EL Templo De Las Camisetas</title>
 			<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
@@ -20,13 +20,14 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
-					<a href="index" class="main-header_home-link">
-						<img src="/images/logo-mercado-liebre.svg">
+					<a href="/index" class="main-header_home-link">
+						<img class="logo" src="/images/logoTemplo.png">
+						<a class="titulo">EL Templo De Las Camisetas</a>
 					</a>
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="" method="GET" class="search-form">
+					<form action="search" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
 					</form>
@@ -46,19 +47,19 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
-					<li><a href="index">Todos los productos</a></li>
-					<li><a href="/product/product-add">Cargar productos</a></li>
+					<li><a href="/index">Todos los productos</a></li>
+					<li><a href="/product-add">Cargar productos</a></li>
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="users">
+					<li><a href="/users">
 							<%= user.name %>  <i class="fas fa-user"></i>
 						</a>	
 					</li>
 					<li>
 						<form action="" method="post">
 							<button class="logout" type="submit">
-								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+								<a>Cerrar sesión</a> <i class="fas fa-sign-in-alt"></i>
 							</button>
 						</form>
 					</li>
