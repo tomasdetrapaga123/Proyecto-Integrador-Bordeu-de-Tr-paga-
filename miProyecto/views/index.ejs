@@ -16,9 +16,9 @@
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% novedades.forEach(novedad => { %>
+			<% for (let index = 0; index < novedades.length; index++) { %>
+				<% const novedad = novedades[index]; %>
 				<div class="col-12 col-sm-6 col-lg-3">
-				
 					<section class="product-box">
 						<a href="product/<%= novedad.id %> ">
 							<figure class="product-box_image">
@@ -33,9 +33,7 @@
 						</a>
 					</section>
 				</div>
-			<% }) %>
-		
-			
+			<% } %>
 		</div>
 	</div>
 	<!-- /Novedades -->

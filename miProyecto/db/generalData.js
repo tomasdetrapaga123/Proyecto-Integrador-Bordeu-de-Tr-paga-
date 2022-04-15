@@ -117,7 +117,7 @@ const data = {
         name: 'Camiseta Barcelona',
         description: 'Camiseta del Barcelona alternativa',
         imageName: 'imageBarcelona.jpg',
-        commentsCount: 2,
+        commentsCount: 1,
     },
 
     {
