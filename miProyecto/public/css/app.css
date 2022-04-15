@@ -183,6 +183,12 @@ hr {
 
 
 /*====== Products ======*/
+
+.nombreComentario {
+ color: #000000;
+
+}
+
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
