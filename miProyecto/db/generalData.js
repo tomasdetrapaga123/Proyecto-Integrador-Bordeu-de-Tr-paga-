@@ -47,7 +47,6 @@ const data = {
     {
         id: 5,
         userName: 'Rafael Larreta',
-
         userEmail: 'rafalarreta@northlands.edu.ar',
         textoDelComentario: '¿Tienen la camiseta titular actual del equipo?',
         imagenDelPerfil: '',

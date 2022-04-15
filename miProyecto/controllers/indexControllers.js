@@ -3,8 +3,8 @@ const dataGeneral = require('../db/generalData')
 const controladores = {
     index:function(req, res, next) {
         const novedades = dataGeneral.products;
-        const masComentados = [novedades[0], novedades[1], novedades[2], novedades[3]];
-        return res.render('index', { title: 'Express', novedades, masComentados });
+
+        return res.render('index', { title: 'Express', novedades, masComentados: [dataGeneral.products[0], dataGeneral.products[1], dataGeneral.products[2], dataGeneral.products[3]]});
     },
 
     register:function(req, res) {
@@ -16,7 +16,21 @@ const controladores = {
     },
 
     search:function(req, res) {
-        return res.render('search-results', { title: 'Search-Results'});
+        const products = [];
+        const search = req.query.search;
+
+        for (let index = 0; index < dataGeneral.products.length; index++) {
+            const product = dataGeneral.products[index];
+            if(product.name.includes(req.query.search)){
+                products.push(product)
+            }
+            // if (products == 0) {
+            //     products.push('No se encontro nada para ' +req.query.search+ '.')
+            // }
+            
+        }
+        
+        return res.render('search-results', { title: 'Search-Results', products});
     },
 
 

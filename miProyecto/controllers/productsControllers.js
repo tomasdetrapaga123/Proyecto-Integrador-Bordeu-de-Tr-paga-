@@ -3,22 +3,8 @@ const dataGeneral = require('../db/generalData')
 const controladores = {
 
     products:function(req, res) {
-        const {id} = req.params
-        let product = false
-        for (let index = 0; index < dataGeneral.products.length; index++) {
-            const element = dataGeneral.products[index];
-            if (element.id == id) { product = element
-
-            }
-        }
-        const comments  = [];
-
-        for (let i = 0; i < dataGeneral.comments.length; i ++){
-            if(dataGeneral.comments[i].productId = product.id){
-                comments.push(dataGeneral.comments[i]);
-            }
-        }
-
+        const comments = dataGeneral.comments
+        const product = dataGeneral.products[0];
         return res.render('product', {
             id: product.id, 
             name: product.name, 
@@ -36,4 +22,5 @@ const controladores = {
 }
 
 module.exports = controladores
+
 

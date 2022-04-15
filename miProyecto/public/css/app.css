@@ -80,9 +80,8 @@ hr {
 }
 
 .logo {
-  height: 100px;
-  width: auto;
-  
+  width:80px;
+  height:80px; 
 }
 
 .main-header {
@@ -157,6 +156,7 @@ hr {
   border: 0px;
   cursor: pointer;
   font-size: 1em;
+  display: flex;
 }
 
 .logout:hover{
@@ -280,6 +280,12 @@ hr {
 }
 
 /*====== Footer ======*/
+
+.logo-footer {
+  width:150px;
+  height:150px;
+}
+
 .main-footer {
   background-color: #000000;
   padding: 20px 0;

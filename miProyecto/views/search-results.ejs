@@ -3,14 +3,34 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
-			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">  <a> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////</a>
-			</h2>
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Resultados de la busqueda</h2>
+					</div>
+
+					<% products.forEach(product => { %>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="product">
+									<figure class="product-box_image">
+										<img src="images/products/<%= product.imageName %> " alt="<% product.name %>"
+										style="height:300px;width:300px;">
+									</figure>
+									<article class="product-box_data">
+										<h2> <%= product.name  %> </h2>
+										<p><%=product.description %> </p>
+										<p><%=product.commentsCount %></p>
+									</article>
+								</a>
+							</section>
+						</div>
+					<% }) %>
+				
+					
+				</div>
+			</div>
 		</div>
 	</div>
 
