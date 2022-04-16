@@ -127,7 +127,11 @@ hr {
   color: var(--gray);
   cursor: pointer;
 }
-
+ 
+.img-card {
+  width: 300px;
+  height: 300px;
+}
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {

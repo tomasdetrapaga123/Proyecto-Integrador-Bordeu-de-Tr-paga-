@@ -1,10 +1,11 @@
 const dataGeneral = require('../db/generalData')
 
 const controladores = {
-    index:function(req, res, next) {
+    index:function(req, res) {
         const novedades = dataGeneral.products;
+        const masComentados = [novedades[0], novedades[1], novedades[2], novedades[3]];
 
-        return res.render('index', { title: 'Express', novedades, masComentados: [dataGeneral.products[0], dataGeneral.products[1], dataGeneral.products[2], dataGeneral.products[3]]});
+        return res.render('index', { novedades, masComentados });
     },
 
     register:function(req, res) {
@@ -38,4 +39,3 @@ const controladores = {
 }
 
 module.exports = controladores
-
