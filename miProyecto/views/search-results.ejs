@@ -9,25 +9,28 @@
 					<div class="col-12">
 						<h2 class="products-title">Resultados de la busqueda</h2>
 					</div>
+					<% if (products.length == 0 ) { %>
+						<h1> No hay resultados para la busqueda </h1>
+					<% } else { %>
+						<% for (let index = 0; index < products.length; index++) { %>
+							<% const product = products[index]; %>
+							<div class="col-12 col-sm-6 col-lg-3">
+								<section class="product-box">
+									<a href="product">
+										<figure class="product-box_image">
+											<img src="images/products/<%= product.imageName %> " alt="<% product.name %>"
+											class="img-card">
+										</figure>
+										<article class="product-box_data">
+											<h2> <%= product.name  %> </h2>
+											<p><%=product.description %> </p>
+											<p><%=product.commentsCount %></p>
+										</article>
+									</a>
+								</section>
+							</div>
+						<% } } %>
 
-					<% products.forEach(product => { %>
-						<div class="col-12 col-sm-6 col-lg-3">
-							<section class="product-box">
-								<a href="product">
-									<figure class="product-box_image">
-										<img src="images/products/<%= product.imageName %> " alt="<% product.name %>"
-										style="height:300px;width:300px;">
-									</figure>
-									<article class="product-box_data">
-										<h2> <%= product.name  %> </h2>
-										<p><%=product.description %> </p>
-										<p><%=product.commentsCount %></p>
-									</article>
-								</a>
-							</section>
-						</div>
-					<% }) %>
-				
 					
 				</div>
 			</div>
