@@ -25,9 +25,7 @@ const controladores = {
             if(product.name.includes(req.query.search)){
                 products.push(product)
             }
-            // if (products == 0) {
-            //     products.push('No se encontro nada para ' +req.query.search+ '.')
-            // }
+            
             
         }
         

@@ -10,7 +10,7 @@
 						<h2 class="products-title">Resultados de la busqueda</h2>
 					</div>
 					<% if (products.length == 0 ) { %>
-						<h1> No hay resultados para la busqueda </h1>
+						<h1 class="resultados-busqueda"> No hay resultados para la busqueda </h1>
 					<% } else { %>
 						<% for (let index = 0; index < products.length; index++) { %>
 							<% const product = products[index]; %>
