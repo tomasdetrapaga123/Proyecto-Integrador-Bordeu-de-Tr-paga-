@@ -17,7 +17,8 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% comments.forEach(comment => { %>
+						<% for (let index = 0; index < comments.length; index++) { %>
+							<% const comment = comments[index]; %>
 						<article>
 							<img src="https://via.placeholder.com/35" alt="">
 							<div class="data">
@@ -26,7 +27,7 @@
 								 <p><%= comment.textoDelComentario %></p>
 							</div>
 						</article>
-						<% }) %>
+						<% } %>
 
 					</section>
 					<form class="form" action="" method="POST">
