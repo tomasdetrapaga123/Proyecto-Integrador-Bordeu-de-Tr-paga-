@@ -3,7 +3,8 @@ const dataGeneral = require('../db/generalData')
 const controllers = {
 
         profile: function(req, res, next) {
-            return res.render('profile', {user:dataGeneral.user, products:dataGeneral.product });
+            const novedades = dataGeneral.products;
+            return res.render('profile', {user:dataGeneral.user, novedades });
 
         },
 
