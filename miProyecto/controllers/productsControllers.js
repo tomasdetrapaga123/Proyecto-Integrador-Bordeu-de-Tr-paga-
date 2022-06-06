@@ -1,17 +1,29 @@
 const dataGeneral = require('../db/generalData')
-
+const db = require('../database/models')
 const controladores = {
 
     products:function(req, res) {
-        const comments = dataGeneral.comments
-        const product = dataGeneral.products[0];
-        return res.render('product', {
-            id: product.id, 
-            name: product.name, 
-            description: product.description,
-            imageName: product.imageName,
-            comments
-         });
+        let id = req.params.id
+        db.Product.findByPk(id, {
+            include:[
+                {association:'comment',
+                include:{
+                    association:'user'
+                }
+            },
+                {
+                    association:'user'
+                }
+
+            
+            ]
+        }).then(producto =>{
+           // return res.send(producto) 
+             return res.render('product', {
+           producto:producto         });
+        })
+       
+      
         
     },
 

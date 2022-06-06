@@ -2,9 +2,18 @@ const dataGeneral = require('../db/generalData')
 const db = require('../database/models')
 const controladores = {
     index:function(req, res) {
-        db.Product.findAll()
+        db.Product.findAll({
+            include:[
+                {
+                association:'user'
+            },
+            {
+                association:'comment'
+            }
+        ]
+        })
         .then(productos=>{
-            //return res.send(productos)
+           // return res.send(productos)
             return res.render('index', { productos:productos});
         })
        

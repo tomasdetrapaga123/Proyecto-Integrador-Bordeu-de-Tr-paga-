@@ -3,7 +3,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> <%= name %>  </h2> 
+			<h2 class="products-title"> <%= producto.shirt_name %>  </h2> 
 			<p class="product-detail-description">
 				<a href="/product-add">Editar</a>
 			</p>
@@ -11,20 +11,20 @@
 		<div class="product-detail">	
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src= "<%= "/images/products/" + imageName %>"  alt="" class="product-detail-img">
+					<img src= "<%= "/images/products/" + producto.shirt_image %>"  alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= description %></p>
+						<%= producto.shirt_description %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let index = 0; index < comments.length; index++) { %>
-							<% const comment = comments[index]; %>
+						<% for (let index = 0; index < producto.comment.length; index++) { %>
+							<% const comment = producto.comment[index]; %>
 						<article>
 							<img src="https://via.placeholder.com/35" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a class="nombreComentario" href="/users">  <%= comment.userName %> </a> </strong>
-								 <p><%= comment.textoDelComentario %></p>
+								<strong> <a class="nombreComentario" href="/users">  <%= comment.user.username %> </a> </strong>
+								 <p><%= comment.comentario %></p>
 							</div>
 						</article>
 						<% } %>
