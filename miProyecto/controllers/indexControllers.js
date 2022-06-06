@@ -1,11 +1,16 @@
 const dataGeneral = require('../db/generalData')
-
+const db = require('../database/models')
 const controladores = {
     index:function(req, res) {
-        const novedades = dataGeneral.products;
-        const masComentados = [novedades[0], novedades[1], novedades[2], novedades[3]];
+        db.Product.findAll()
+        .then(productos=>{
+            //return res.send(productos)
+            return res.render('index', { productos:productos});
+        })
+       
 
-        return res.render('index', { novedades, masComentados });
+       
+        
     },
 
     register:function(req, res) {
