@@ -16,10 +16,6 @@ const controladores = {
            // return res.send(productos)
             return res.render('index', { productos:productos});
         })
-       
-
-       
-        
     },
 
     register:function(req, res) {
@@ -39,8 +35,6 @@ const controladores = {
             if(product.name.includes(req.query.search)){
                 products.push(product)
             }
-            
-            
         }
         
         return res.render('search-results', { title: 'Search-Results', products});
