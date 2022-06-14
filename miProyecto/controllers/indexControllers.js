@@ -10,6 +10,7 @@ const controladores = {
             {
                 association:'comment'
             }
+
         ]
         })
         .then(productos=>{
