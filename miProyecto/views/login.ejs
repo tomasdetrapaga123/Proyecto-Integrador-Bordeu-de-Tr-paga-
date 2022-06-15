@@ -7,21 +7,24 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				<li><a>Mail: <input type="email" id="email"></a></li>
-				<br>
-				<br>
-				<li><a>Contraseña: <input type="password"></a></li>
-				<br>
-				<br>
-				<li><a>Recordarme: <input type="checkbox"></a></li>
+			<h2 class="col-12">
+				<form action="/users/authenticate" method="POST">
+					<li><a>Mail: <input name="email" type="email" id="email"></a></li>
+					<br>
+					<br>
+					<li><a>Contraseña: <input name="password" type="password"></a></li>
+					<br>
+					<br>
+					<li><a>Recordarme: <input name="remember" type="checkbox"></a></li>
+					<button>Ingresar</button>
+				</form>
 			</h2>
 		</div>
 	</div>
 
 
-<%- include('./partials/footer') %>
+	<%- include('./partials/footer') %>
 
-</body>
+		</body>
 
-</html>
+		</html>
