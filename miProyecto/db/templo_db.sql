@@ -54,16 +54,16 @@ VALUES
 
 INSERT INTO products
 VALUES
-(DEFAULT, 1, "Independiente", "Camiseta de 1982 utilizada por Rolfi Montenegro.", "cai.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 4, "Argentina", "Camiseta de la selección Argentina utilizada por Riquelme", "argentina.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 2, "Atlético de Madrid", "Camiseta del atlético de madrid para subastar", "atm.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 3, "Barcelona", "Camiseta del Barcelona en su época dorada", "barcelona.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 10, "Holanda", "Camiseta de Holanda retro", "holanda.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 9, "Independiente", "Camiseta de Independiente utilizada por Bochini", "independiente.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 5, "Liverpool", "Camiseta del liverpool", "liverpool.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 4, "Manchester City", "Camiseta del Manchester City donada por Sergio Aguero", "mancity.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 7, "Real Madrid", "Camiseta del club con mas historia, el Real Madrid", "realmadrid.jpg",  CURDATE(), DEFAULT),
-(DEFAULT, 6, "Paris Saint-Germain", "Camiseta del Paris Saint-Germain", "psg.jpg",  CURDATE(), DEFAULT);
+(DEFAULT, 1, "Inter Milan", "Camiseta del 2020 del Inter de Milan.", "imageMilan.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 4, "Argentina", "Camiseta de la selección Argentina utilizada por Riquelme", "imageArgentina.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 2, "Atlético de Madrid", "Camiseta del atlético de madrid para subastar", "imageAtleticoMadrid.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 3, "Barcelona", "Camiseta del Barcelona en su época dorada", "imageBarcelona.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 10, "Holanda", "Camiseta de Holanda retro", "imageHolanda.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 9, "Independiente", "Camiseta de Independiente utilizada por Bochini", "imageIndependiente.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 5, "Liverpool", "Camiseta del liverpool", "imageLiverpool.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 4, "Manchester City", "Camiseta del Manchester City donada por Sergio Aguero", "imageManCity.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 7, "Real Madrid", "Camiseta del club con mas historia, el Real Madrid", "imageRealMadrid.jpg",  CURDATE(), DEFAULT),
+(DEFAULT, 6, "Paris Saint-Germain", "Camiseta del Paris Saint-Germain", "imagePSG.jpg",  CURDATE(), DEFAULT);
 
 
 
@@ -74,9 +74,10 @@ VALUES
 (DEFAULT, 2, 2, "Que manera de mentir! esa camiseta no la usaba Riquelme, no les compro mas.", CURDATE(), DEFAULT ),
 (DEFAULT, 3, 3, "Espectacular, cuanto sale?", CURDATE(), DEFAULT ),
 (DEFAULT, 6, 6, "Bochini para esa epoca ya no jugaba, me parece que no es la que él uso.", CURDATE(), DEFAULT ),
-(DEFAULT, 1, 1, "Que buena camiseta, la quier ya.", CURDATE(), DEFAULT ),
+(DEFAULT, 1, 1, "Que buena camiseta, la quiero ya.", CURDATE(), DEFAULT ),
 (DEFAULT, 8, 8, "No llego a ver si es de buena calidad porque la imagen no se ve muy clara!", CURDATE(), DEFAULT ),
 (DEFAULT, 1, 7, "No me gustó.", CURDATE(), DEFAULT ),
 (DEFAULT, 10, 5, "La de Messi la tienen?", CURDATE(), DEFAULT ),
 (DEFAULT, 4, 4, "Yo la quiero! de esas no quedan muchas.", CURDATE(), DEFAULT ),
 (DEFAULT, 7, 10, "Que buena camiseta, cuanto cuesta?", CURDATE(), DEFAULT );
+

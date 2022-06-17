@@ -1,4 +1,4 @@
-<%- include('./partials/headerLogueado') %> 
+<%- include('./partials/headerLogueado') %>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -8,24 +8,31 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<li>Imagen: <input type="image"> </li>
-				<br>
-				<br>
-				<li>Nombre del Producto: <input type="text"></li>
-				<br>
-				<br>
-				<li>Descripción: <input type="text"></li>
-				<br>
-				<br>
-				<li>Fecha de Carga: <input type="date"></li>
+
+				<form action="/product/product-add" method="post">
+					<li>Imagen: <input type="file" name="shirt_image"> </li>
+					<br>
+					<br>
+					<li>Nombre del Producto: <input type="text" name="shirt_name"></li>
+					<br>
+					<br>
+					<li>Descripción: <input type="text" name="shirt_description"></li>
+					<br>
+					<br>
+					<li>Fecha de Carga: <input type="date" name="created_at"></li>
+					<br>
+					<br>
+					<li><input type="submit" value="Agregar Producto"></li>
+
+				</form>
 			</h2>
 		</div>
 	</div>
 
 
-<%- include('./partials/footer') %>
+	<%- include('./partials/footer') %>
 
 
-</body>
+		</body>
 
-</html>
+		</html>
