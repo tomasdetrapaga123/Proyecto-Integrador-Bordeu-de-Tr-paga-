@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var controller = require('../controllers/usersControllers');
-var controllers = require('../controllers/indexControllers');
+var userController = require('../controllers/usersControllers');
+var indexController = require('../controllers/indexControllers');
 
-router.get('/', controller.profile)
-router.get('/profile-edit', controller.profileEdit)
-router.get('/search', controllers.search);       
-router.get('/login', controller.login);       
-router.post('/authenticate', controller.authenticate);       
+router.get('/', userController.profile)
+router.get('/profile-edit', userController.profileEdit)
+router.get('/search', indexController.search);       
+router.get('/login', userController.login);  // Me va a mostrar el formulario de registro unicamente
+router.post('/login', userController.procesarLogin);  // Me va a procesar los datos
+router.get('/register', userController.register);
+router.post('/register', userController.procesarRegister)
 
 
 
