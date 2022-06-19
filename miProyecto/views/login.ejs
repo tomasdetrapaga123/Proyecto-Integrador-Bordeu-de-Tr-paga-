@@ -9,12 +9,17 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
 				<form action="/users/login" method="POST">
-					<li><a>Mail: <input name="email" type="email" id="email"></a></li>
-					<br>
-					<br>
-					<li><a>Contraseña: <input name="password" type="password"></a></li>
-					<br>
-					<br>
+					<div class="input-container ic1">
+						<input id="password" class="input" type="email" name="email" placeholder="mail" />
+					</div>
+		
+					<div class="input-container ic1">
+						<input id="password" class="input" type="password" name="password" placeholder="clave" />
+					</div>
+					<div class="input-container ic1 checkbox">
+					  <label for="remember">Recordarme</label>
+					  <input id="remember" class="input" type="checkbox" name="remember" /> 
+				  </div>
 					<button>Ingresar</button>
 				</form>
 			</h2>

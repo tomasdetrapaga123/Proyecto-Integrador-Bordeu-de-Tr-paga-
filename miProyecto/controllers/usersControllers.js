@@ -34,16 +34,20 @@ const userController = {
             if (result != null) { // Lo primero que digo es que si este usuario existe
                 let passCript = bcrypt.compareSync(info.password , result.password) // Quiero comparar mi clave que tengo en el formulario con el hash en la base de datos. 
                                                                                     // El compareSync va a hacer de manera asincronica esta comparación, hashea el primer dato y me va a devolver un booleano verdadera si es igual y un falso si no lo es 
-                if (passCript = true) {
-                    return res.redirect("/index/all");
+                if (passCript) {
+                    req.session.user = result.dataValues; // Que en session guarde una propiedad llamada user. Nosotros capturamos en result el dataValues que tiene toda la información y la guardamos en sesión 
+                    
+                    if (req.body.remember != undefined) { // Si existe el recordarme que tengo en el body
+                        res.cookie('userId', result.dataValues.id, {maxAge : 1000 * 60 * 10}) // 1) el nombre de la propiedad que quier guardar, 2) lo que quiero guardar. En este caso seria el id del usuario, 3) una propiedad que dice cuanto tiempo
+                    }
+
+                    return res.redirect("/index");
                 } else {
                     return res.send("El mail " + result.email + " existe, pero la contraseña es incorrecta");
                 } // Si la comparacion de arriba es falsa que me ponga que la contraseña es incorrecta
             } else {
                
             }
-
-
 
         }).catch((err) => {
 
@@ -52,7 +56,6 @@ const userController = {
     },
     register: (req , res) => {
         return res.render('register');
-
     },
     procesarRegister: (req , res) => {     
         let info = req.body; // Quiero que me leas toda la información que viene en el cuerpo del formulario y me la guardes en a variable info
@@ -62,8 +65,8 @@ const userController = {
             username : info.username, // Tengo que ir a register.ejs para fijarme que name tiene en el input
             email : info.email,
             password : bcrypt.hashSync(info.password, 10),
-          //birthday: info.birthday,
-          //img : info,
+            birthday: info.birthday,
+            img : info.img,
             created_at : new Date(), // Esto no esta en info. Por eso voy a mySQL y me fijo que tipo de dato son
             update_at : new Date(), // new Date() es darle la fecha del dia de hoy
         }
@@ -74,6 +77,11 @@ const userController = {
         }).catch((err) => {
 
         }); // Creando el usuario en la base de datos
+    },
+    logout: (req , res) => {
+        req.session.destroy(); // Destruimos la session
+        res.clearCookie('userId') // Borramos las cookies userId
+        return res.render("login")
     }
 }
 

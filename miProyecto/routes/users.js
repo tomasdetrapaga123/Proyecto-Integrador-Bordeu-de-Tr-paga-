@@ -10,6 +10,7 @@ router.get('/login', userController.login);  // Me va a mostrar el formulario de
 router.post('/login', userController.procesarLogin);  // Me va a procesar los datos
 router.get('/register', userController.register);
 router.post('/register', userController.procesarRegister)
+router.get('/', userController.logout)
 
 
 
