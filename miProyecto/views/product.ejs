@@ -24,7 +24,14 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= producto.shirt_name %>  </h2> 
 			<p class="product-detail-description">
-				<a href="/product-add">Editar</a>
+				<% if (locals.user &&locals.user.id == producto.user.id) { %> 
+					<a href="/product/edit/<%= producto.id %>">Editar</a>
+					<form class="form" action="/product/delete/<%= producto.id %>" method="POST">
+						
+						<button type="submit">Eliminar</button>
+					</form>
+
+				<% } %>
 			</p>
 		</div>
 		<div class="product-detail">	
@@ -32,14 +39,17 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src= "<%= "/images/products/" + producto.shirt_image %>"  alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= producto.shirt_description %></p>
+						<%= producto.shirt_description %>
+					
+						<p class="product-detail-description" style="font-weight: bold;">Hecho por: <%= producto.user.username %></p>
+					</p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% for (let index = 0; index < producto.comment.length; index++) { %>
 							<% const comment = producto.comment[index]; %>
 						<article>
-							<img src="https://via.placeholder.com/35" alt="">
+							<img src="/images/users/<%= comment.user.img %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a class="nombreComentario" href="/user/profile/<%= comment.user.id %>">  <%= comment.user.username %> </a> </strong>
@@ -49,10 +59,14 @@
 						<% } %>
 
 					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<% if(locals.user){ %> 
+					<form class="form" action="/product/comment" method="POST">
+						<input class="form-input" type="text" name="comentario" placeholder="Agregar comentario">
+						<input type="hidden" name="idProduct" value="<%= producto.id %>">
+						<input type="hidden" name="idUser" value="<%= locals.user.id %>">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+					<% } %> 
 					<hr>
 				</div>
 			</div>

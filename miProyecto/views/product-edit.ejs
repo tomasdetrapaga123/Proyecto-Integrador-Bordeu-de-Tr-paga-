@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<!-- estilos CSS -->
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+	<% if (locals.user != undefined) { %> <!--Existe en locals una propedad llamada user quiero que me muestre el headerLogueado-->
+		<%- include('./partials/headerLogueado.ejs') %>
+	<% }else{ %> <!--Si no que me muestre el header-->
+		<%- include('./partials/header.ejs') %>
+		<% } %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar producto</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12">
+
+				<form action="/product/edit" method="post" enctype="multipart/form-data">
+					<li>Imagen: <input type="file" name="shirt_image"  value="<%= producto.shirt_image  %> "> </li>
+					<br>
+					<br>
+					<li>Nombre del Producto: <input type="text" name="shirt_name" value="<%= producto.shirt_name %> "></li>
+					<br>
+					<br>
+					<li>Descripción: <input type="text" name="shirt_description" value="<%= producto.shirt_description  %> "></li>
+					<input type="hidden" name="idProduct" value="<%= producto.id  %> ">
+					<input type="hidden" name="idUser" value="<%= producto.user.id  %> ">
+					<br>
+					<br>
+					<li><input type="submit" value="Editar Producto" ></li>
+
+				</form>
+			</h2>
+		</div>
+	</div>
+
+
+	<%- include('./partials/footer') %>
+
+
+		</body>
+
+		</html>
