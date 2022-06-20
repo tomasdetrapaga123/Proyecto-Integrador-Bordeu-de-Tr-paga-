@@ -24,10 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/product', productsRouter);
-
 
 /* Configurando el session */
 app.use(session({
@@ -50,10 +46,10 @@ app.use(function (req, res, next) {// Tengo que ir a buscar cual fue la cookie q
   if (req.cookies.userId != undefined && req.session.user == undefined) { // 1) que la cookie exista en el navegador, 2) que no este el usuario en session 
     // Si no esta en sesion y esta la cookie guardada en su navegador quier que vayas a capturar el id de su usuario y quiero que lo vayas a buscar a la base de datos y quiero que lo pongas en session y en el locals 
     let idUsuarioCookie = req.cookies.userId; // Guardo el id del usuario en la variable 
-    db.User.findByPk(idUsuarioCook)// Quiero buscar por primary key y esta en idUsuarioCookie
+    db.User.findByPk(idUsuarioCookie)// Quiero buscar por primary key y esta en idUsuarioCookie
     .then((user) => {
       req.session.user = user.dataValues // Quiero que guarde los datos de la base de datos que estan en user.dataValues
-      req.locals.user = user.dataValues // Llamamos a res porque trabaja con locals
+      res.locals.user = user.dataValues // Llamamos a res porque trabaja con locals
       return next()
     }).catch((err) => {
       console.log(err);
@@ -62,6 +58,12 @@ app.use(function (req, res, next) {// Tengo que ir a buscar cual fue la cookie q
           return next()
   }
 })
+
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/product', productsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

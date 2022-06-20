@@ -34,7 +34,8 @@ const controladores = {
     },
 
     productCreate: function (req, res) { 
-        console.log(req.body.shirt_name);
+
+        
         return res.render('product-add', { user: dataGeneral.user })
     }
 

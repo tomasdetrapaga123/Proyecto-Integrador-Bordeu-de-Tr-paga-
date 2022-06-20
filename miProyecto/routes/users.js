@@ -2,15 +2,29 @@ var express = require('express');
 var router = express.Router();
 var userController = require('../controllers/usersControllers');
 var indexController = require('../controllers/indexControllers');
+let multer = require('multer');
+let path = require('path')
 
-router.get('/', userController.profile)
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, path.join(__dirname, '../public/images/users/'))
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+   
+  var upload = multer({ storage: storage })
+
+
+router.get('/profile/:id', userController.profile)
 router.get('/profile-edit', userController.profileEdit)
 router.get('/search', indexController.search);       
 router.get('/login', userController.login);  // Me va a mostrar el formulario de registro unicamente
 router.post('/login', userController.procesarLogin);  // Me va a procesar los datos
 router.get('/register', userController.register);
-router.post('/register', userController.procesarRegister)
-router.post('/logout', userController.logout)
+router.post('/register',upload.single("img"), userController.procesarRegister)
+router.get('/logout', userController.logout)
 
 
 
