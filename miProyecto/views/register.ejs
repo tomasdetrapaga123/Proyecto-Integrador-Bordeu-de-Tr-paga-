@@ -24,14 +24,16 @@
 	<!-- Novedades -->
 <section>
 	<% if (locals.errors) { %>
-	 <p> <%= locals.errors.message %>  </p>
+	 <p class="errorMessage"> <%= locals.errors.message %>  </p>
 	<% } %>
-	<div class="container products-wrapper">
+	<div class="registro">
 		<div class="row">
+			
+			<!-- Show the "ultimos" products -->
+			<div class="cajainput">
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
 				<form action="/users/register" method="POST" enctype="multipart/form-data">
 					<div class="input-container">
@@ -52,7 +54,7 @@
 
 					<button type="text" class="submit">Registrarse</button>
 				</form>
-			</h2>
+			</h2></div>
 		</div>
 	</div>
 </section>

@@ -22,11 +22,13 @@
 	<!-- Novedades -->
 <section>
 	<% if (locals.errors) { %>
-		<p> <%= locals.errors.message %>  </p>
+		<p class="errorMessageLogin"> <%= locals.errors.message %>  </p>
 	<% } %>
 	
-	<div class="container products-wrapper">
+	<div class="registro">
 		<div class="row">
+
+			<div class="cajainput">
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
 			</div>
@@ -36,17 +38,17 @@
 					<div class="input-container ic1">
 						<input id="password" class="input" type="email" name="email" placeholder="mail" />
 					</div>
-		
 					<div class="input-container ic1">
 						<input id="password" class="input" type="password" name="password" placeholder="clave" />
 					</div>
 					<div class="input-container ic1 checkbox">
-					  <label for="remember">Recordarme</label>
+					  <label for="remember" class="remember">Recordarme</label>
 					  <input id="remember" class="input" type="checkbox" name="remember" /> 
 				  </div>
-					<button>Ingresar</button>
+					<button type="text" class="submit">Ingresar</button>
 				</form>
 			</h2>
+		</div>
 		</div>
 	</div>
 </section>

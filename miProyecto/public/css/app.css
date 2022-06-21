@@ -504,17 +504,67 @@ textarea.form-input {
 }
 
 
-.col-12{
-
+/*====== Formularios Registro y Login ======*/
+.registro{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+.cajainput{
+  margin-top: 10px;
+  background-color: #413d3d;
+  border-radius: 5px;
+}
 .input-container{
   margin-bottom: 20px;
+  padding-top: 10px;
 }
 .input{
   font-size: 17px;
   border-radius: 5px;
   border-color: #ffffff;
+}
+.submit{
+  font-size: 17px;
+  color: #1259c3;
+  border-radius: 5px;
+  border-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.errorMessage{
+  background-color: rgba(255, 0, 0, 0.719);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  margin-left: 560px;
+  margin-right: 560px;
+  border-radius: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.remember{
+  font-size: 17px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: white;
+  font-weight: lighter;
+}
+.errorMessageLogin{
+  background-color: rgba(255, 0, 0, 0.719);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  margin-left: 576px;
+  margin-right: 576px;
+  border-radius: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 
