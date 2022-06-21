@@ -200,8 +200,8 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: #413d3d;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
 }
 
 .products-title {
@@ -504,9 +504,9 @@ textarea.form-input {
 }
 
 
-.col-12{
+/* .col-12{
 
-}
+} */
 
 .input-container{
   margin-bottom: 20px;
