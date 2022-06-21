@@ -18,12 +18,14 @@ var storage = multer.diskStorage({
 
 
 router.get('/profile/:id', userController.profile)
-router.get('/profile-edit', userController.profileEdit)
+
+router.get('/profile-edit/:id', userController.profileEdit)
 router.get('/search', indexController.search);       
 router.get('/login', userController.login);  // Me va a mostrar el formulario de registro unicamente
 router.post('/login', userController.procesarLogin);  // Me va a procesar los datos
 router.get('/register', userController.register);
 router.post('/register',upload.single("img"), userController.procesarRegister)
+router.post('/edit',upload.single("img"), userController.editar)
 router.get('/logout', userController.logout)
 
 

@@ -23,12 +23,17 @@ const userController = {
             ],
         }).then((result) =>{
            // res.send(result)
-            return res.render('profile', { user: result , productos:user.products });
+            return res.render('profile', { usuario: result  });
         })
 
     },
     profileEdit: function (req, res) {
-        return res.render('profile-edit', { user: dataGeneral.user });
+        db.User.findByPk(req.params.id)
+        .then((result) =>{
+             //res.send(result)
+            
+            return res.render('profile-edit', { user: result });
+         })
     },
     login: function (req, res) {
         if (req.session.user) {
@@ -140,6 +145,42 @@ const userController = {
     
             }); // Creando el usuario en la base de datos
         }
+       
+        
+    },
+    editar: (req , res) => {     
+        let info = req.body; 
+       
+            let usuario = { // No ponemos el id porque es autoincremental
+                // Saco los valores de info para llenar el objeto literal (email, etc.)
+                username : info.username, // Tengo que ir a register.ejs para fijarme que name tiene en el input
+                email : info.email,
+                password : bcrypt.hashSync(info.password, 10),
+                birthday: info.birthday,
+                img : "",
+                updated_at : new Date(), // new Date() es darle la fecha del dia de hoy
+            }
+            
+            if (!req.file && info.imgVieja) {
+                usuario.img= info.imgVieja
+            }else if(!req.file){
+                usuario.img= "default-image.png"
+            }else{
+
+                usuario.img= req.file.filename
+            }
+            /* Almacenando el registro del usuario */
+            user.update(usuario,{
+                where:{
+                    id:info.userId
+                }
+            } )
+            .then((result) =>{
+                return res.redirect("/users/profile/"+info.userId) // Lo quiero redirigir para que se logee
+            }).catch((err) => {
+    
+            }); // Creando el usuario en la base de datos
+        
        
         
     },
