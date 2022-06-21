@@ -27,7 +27,6 @@ const userController = {
         })
 
     },
-
     profileEdit: function (req, res) {
         return res.render('profile-edit', { user: dataGeneral.user });
     },

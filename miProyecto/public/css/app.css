@@ -191,7 +191,6 @@ hr {
 
 
 /*====== Products ======*/
-
 .nombreComentario {
  color: #000000;
 
@@ -201,6 +200,8 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: #413d3d;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .products-title {
@@ -324,8 +325,8 @@ hr {
 
 .footer-data h3 {
   color: var(--white);
-  font-size: 2.0em;
-  font-weight: 400;
+  font-size: 1.8em;
+  font-weight: 300;
 }
 
 .footer-data p {
@@ -501,6 +502,21 @@ textarea.form-input {
   resize: vertical;
   padding: 15px;
 }
+
+
+.col-12{
+
+}
+
+.input-container{
+  margin-bottom: 20px;
+}
+.input{
+  font-size: 17px;
+  border-radius: 5px;
+  border-color: #ffffff;
+}
+
 
 /*====== Profile ======*/
 .info-usuario{
