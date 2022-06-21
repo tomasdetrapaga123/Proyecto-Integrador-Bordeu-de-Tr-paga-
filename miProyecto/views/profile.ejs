@@ -23,21 +23,24 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/images/users/<%= user.img %>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= usuario.img %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= user.username %>   	
-						<a href="/users/profile-edit">
+					<h1 class="main-title"><%= usuario.username %>  
+						<% if (locals.user && usuario.id == locals.user.id) { %>
+						 	<a href="/users/profile-edit/<%= usuario.id %>">
 							<i class="fas fa-cog"></i>
-						</a>
+							</a>
+						<% } %> 	
+					
 					</h1>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
 				<div>
 					<ul class="info-usuario">
-						<li>Productos: <%= user.products.length %> </li>
-						<li>Comentarios: <%= user.comments.length %> </li>
+						<li>Productos: <%= usuario.products.length %> </li>
+						<li>Comentarios: <%= usuario.comments.length %> </li>
 					</ul>
 				</div>
 			</div>
@@ -52,8 +55,8 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<% for (let index=0; index < user.products.length; index++) { %>
-				<% const novedad=user.products[index]; %>
+			<% for (let index=0; index < usuario.products.length; index++) { %>
+				<% const novedad=usuario.products[index]; %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href="/product/<%= novedad.id %>">
@@ -72,7 +75,7 @@
 										<%=novedad.comment.length %>
 									</p>
 									<p>
-										<%=user.username%>
+										<%=usuario.username%>
 									</p>
 								</article>
 							</a>

@@ -25,25 +25,28 @@
 			<div class="col-12">
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
-				<li><a>Mail: <input type="email" id="email"></a></li>
-				<br>
-				<br>
-				<li><a>Usuario: <input type="text" name="nombre"/></a></li>
-				<br>
-				<br>
-				<li><a>Contraseña: <input type="password"></a></li>
-				<br>
-				<br>
-				<li><a>Fecha de Nacimiento: <input type="date"></a></li>
-				<br>
-				<br>
-				<li><a>Documento: <input type ="number"></a></li>
-				<br>
-				<br>
-				<li><a>Foto de Perfil: <input type ="file"></a></li>
-			</h2>
+			<form action="/users/edit" method="POST" enctype="multipart/form-data">
+				<div class="title">Editar Perfil</div>
+				<div class="input-container ic1">
+					<input id="name" class="input" type="text" name="username" placeholder="nombre" value="<%= user.username %>" />
+				</div>
+				<div class="input-container ic1">
+					<input id="password" class="input" type="email" name="email" placeholder="mail"value="<%= user.email %>"  />
+				</div>
+				<div class="input-container ic1">
+					<input id="password" class="input" type="password" name="password" placeholder="clave" 
+					value="<%= user.password %>"/>
+				</div>
+				<div class="input-container ic1">
+					<input id="birthday" class="input" type="date" name="birthday" value="<%= user.birthday %>" />
+				</div>
+				<div class="input-container ic1">
+					<input id="img" class="input" type="file" name="img" value="<%= user.img %>"/>
+				</div>
+				<input type="hidden" name="userId" value="<%= user.id %>">
+				<input type="hidden" name="imgVieja" value="<%= user.img %>">
+				<button type="text" class="submit">submit</button>
+			</form>
 		</div>
 	</div>
 
