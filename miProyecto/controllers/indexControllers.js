@@ -13,7 +13,7 @@ const controladores = {
 
             ],
             order:[
-                ['created_at', 'DESC']
+                ['id', 'DESC']
             ]
         })
             .then(productos => {
