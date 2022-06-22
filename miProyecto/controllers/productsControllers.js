@@ -17,6 +17,9 @@ const controladores = {
                 }
 
 
+            ],
+            order:[
+                ['comment', 'id', 'desc']
             ]
         }).then(producto => {
             // return res.send(producto) 
@@ -30,6 +33,7 @@ const controladores = {
     },
     delete: function (req, res) {
         let id = req.params.id
+        if (req.body.userIdLog = req.body.productUserId) {
         db.Product.destroy({
             where:[{
                 id:id
@@ -37,6 +41,10 @@ const controladores = {
         } ).then(producto => {
             return res.redirect("/")
         })
+        } else {
+            res.redirect("/product/"+id)
+        }
+        
     },
     edit: function (req, res) {
         let id = req.params.id
@@ -51,9 +59,14 @@ const controladores = {
             ]
         }).then(producto => {
             // return res.send(producto) 
-            return res.render('product-edit', {
-                producto: producto
-            });
+            if (req.session.user.id == producto.user.id) {
+                 return res.render('product-edit', {
+                    producto: producto
+                });
+            }else{
+                res.redirect("/users/profile/"+req.session.user.id)
+               
+            }
         })
 
 
