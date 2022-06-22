@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var userController = require('../controllers/usersControllers');
 var indexController = require('../controllers/indexControllers');
+
 let multer = require('multer');
 let path = require('path')
 
@@ -14,7 +15,7 @@ var storage = multer.diskStorage({
     }
   })
    
-  var upload = multer({ storage: storage })
+var upload = multer({ storage: storage })
 
 
 router.get('/profile/:id', userController.profile)

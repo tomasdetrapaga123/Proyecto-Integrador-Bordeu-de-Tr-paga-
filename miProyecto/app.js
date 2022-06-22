@@ -19,8 +19,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+/* Para que se pueda capturar la información enviada */
+app.use(express.json()); // Método POST
+app.use(express.urlencoded({ extended: false })); // Método POST
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -35,7 +36,7 @@ app.use(session({
 /* Creo un middelwear que le pase una función y dentro de la función le pase la información */
 app.use(function (req, res, next) {
   if (req.session.user != undefined) { // Guardar session en locals. Con res guardo
-    res.locals.user = req.session.user // Quiero guardar el usuario que esta en sesion
+    res.locals.user = req.session.user // Quiero guardar el usuario que esta en sesion // =req.session.user para leer información de session
     return next() // Si entra en el if que ejecute y sino tb (return de abajo)
   }
   return next()

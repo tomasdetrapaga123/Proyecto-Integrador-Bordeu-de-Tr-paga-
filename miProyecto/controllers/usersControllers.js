@@ -47,7 +47,7 @@ const userController = {
         let info = req.body; 
         let filtro = { // Hacemos un filtro
             where : [ // Este where hace un array de condiciones. Que condiciones quiero que se cumplan
-                { email : info.email} // La primera es un objeto literal // Quiero que coincida el mail con el del usuario y lo tengo en info.email (email es el name del input)
+                {email : info.email} // La primera es un objeto literal // Quiero que coincida el mail con el del usuario y lo tengo en info.email (email es el name del input)
             ] // Si encuentras un registro que coincida con este coreo, traeme todo el registro
         }
         let errors = {};
@@ -116,15 +116,15 @@ const userController = {
             errors.message = "El email esta vacio";
             res.locals.errors = errors;
             return res.render('register');
-        } else if(info.password.length <= 6){
-            errors.message = "La contraseña debe tener 6 caracteres o más";
+        } else if(info.password.length < 3){
+            errors.message = "La contraseña debe tener más de 3 caracteres";
             res.locals.errors = errors;
             return res.render('register');
         }
         else {
             let usuario = { // No ponemos el id porque es autoincremental
                 // Saco los valores de info para llenar el objeto literal (email, etc.)
-                username : info.username, // Tengo que ir a register.ejs para fijarme que name tiene en el input
+                username : info.username, // Tengo que ir a register.ejs para fijarme que name tiene en el input   
                 email : info.email,
                 password : bcrypt.hashSync(info.password, 10),
                 birthday: info.birthday,
@@ -133,9 +133,9 @@ const userController = {
                 update_at : new Date(), // new Date() es darle la fecha del dia de hoy
             }
             if (!req.file) {
-                usuario.img="default-image.png"
+                usuario.img = "default-image.png"
             }else{
-                usuario.img= req.file.filename
+                usuario.img = req.file.filename
             }
             /* Almacenando el registro del usuario */
             user.create(usuario)
