@@ -15,7 +15,7 @@
 
 	<% if (locals.user != undefined) { %> <!--Existe en locals una propedad llamada user quiero que me muestre el headerLogueado-->
 		<%- include('./partials/headerLogueado.ejs') %>
-		<p class="Bienvenido">Bienvenido <%= locals.user.username %></p>
+		<p class="bienvenido">Bienvenido <%= locals.user.username %></p>
 	<% }else{ %> <!--Si no que me muestre el header-->
 		<%- include('./partials/header.ejs') %>
 		<% } %>

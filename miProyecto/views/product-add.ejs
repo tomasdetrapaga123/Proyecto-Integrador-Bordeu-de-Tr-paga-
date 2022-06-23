@@ -20,8 +20,10 @@
 		<% } %>
 
 	<!-- Novedades -->
-	<div class="container products-wrapper">
+	<div class="registro">
 		<div class="row">
+
+			<div class="cajainput">
 			<div class="col-12">
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
@@ -29,19 +31,21 @@
 			<h2 class="col-12">
 
 				<form action="/product/product-add" method="post" enctype="multipart/form-data">
-					<li>Imagen: <input type="file" name="shirt_image"> </li>
-					<br>
-					<br>
-					<li>Nombre del Producto: <input type="text" name="shirt_name"></li>
-					<br>
-					<br>
-					<li>Descripción: <input type="text" name="shirt_description"></li>
-					<br>
-					<br>
-					<li><input type="submit" value="Agregar Producto"></li>
+					<div class="input-container">
+						<input id="img" class="input" type="file" name="shirt_image"/>
+					</div>
+					<div class="input-container">
+						<input id="name" class="input" type="text" name="shirt_name" placeholder="nombre del producto" />
+					</div>
+					<div class="input-container">
+						<input id="name" class="input" type="text" name="shirt_description" placeholder="descripción" />
+					</div>
+					<li><input class="submit" type="submit" value="Agregar Producto"></li>
 
 				</form>
 			</h2>
+	</div>
+
 		</div>
 	</div>
 

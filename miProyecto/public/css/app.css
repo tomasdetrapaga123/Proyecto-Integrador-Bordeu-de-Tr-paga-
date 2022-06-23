@@ -567,6 +567,17 @@ textarea.form-input {
   padding-right: 3px;
 }
 
+.bienvenido{
+  font-size: 20px;
+  color: white;
+  background-color: #413d3d;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  margin-left: 24px;
+  margin-right: 1160px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
 
 /*====== Profile ======*/
 .info-usuario{
