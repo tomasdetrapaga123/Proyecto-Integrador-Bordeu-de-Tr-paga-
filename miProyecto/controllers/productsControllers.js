@@ -74,7 +74,7 @@ const controladores = {
     },
 
     productAdd: function (req, res) {
-        return res.render('product-add', { user: dataGeneral.user })
+        return res.render('product-add')
     },
 
     productCreate: function (req, res) { 
