@@ -147,16 +147,54 @@ const userController = {
     editar: (req , res) => {     
         let info = req.body; 
        
-            let usuario = { // No ponemos el id porque es autoincremental
-                // Saco los valores de info para llenar el objeto literal (email, etc.)
-                username : info.username, // Tengo que ir a register.ejs para fijarme que name tiene en el input
+            // let usuario = {
+           
+            //     username : info.username, 
+            //     email : info.email,
+            //     password : bcrypt.hashSync(info.password, 10),
+            //     birthday: info.birthday,
+            //     img : "",
+            //     updated_at : new Date(), // new Date() es darle la fecha del dia de hoy
+            // }
+            
+            // if (!req.file && info.imgVieja) {
+            //     usuario.img= info.imgVieja
+            // }else if(!req.file){
+            //     usuario.img= "default-image.png"
+            // }else{
+
+            //     usuario.img= req.file.filename
+            // }
+            // /* Almacenando el registro del usuario */
+            // user.update(usuario,{
+            //     where:{
+            //         id:info.userId
+            //     }
+            // } )
+            let errors = {};
+
+            if (info.username == "") {
+                errors.message = "El nombre esta vacio";
+                res.locals.errors = errors;
+                return res.render('profile-edit');
+            } else if(info.email == ""){
+                errors.message = "El email esta vacio";
+                res.locals.errors = errors;
+                return res.render('profile-edit');
+            } else if(info.password.length <= 6){
+                errors.message = "La contraseña debe tener 6 caracteres o más";
+                res.locals.errors = errors;
+                return res.render('profile-edit');
+            }
+            else {
+                let usuario = {
+                username : info.username, 
                 email : info.email,
                 password : bcrypt.hashSync(info.password, 10),
                 birthday: info.birthday,
                 img : "",
-                updated_at : new Date(), // new Date() es darle la fecha del dia de hoy
+                updated_at : new Date(),
             }
-            
             if (!req.file && info.imgVieja) {
                 usuario.img= info.imgVieja
             }else if(!req.file){
@@ -165,19 +203,20 @@ const userController = {
 
                 usuario.img= req.file.filename
             }
-            /* Almacenando el registro del usuario */
-            user.update(usuario,{
+
+            
+                user.update(usuario,{
                 where:{
                     id:info.userId
                 }
             } )
             .then((result) =>{
-                return res.redirect("/users/profile/"+info.userId) // Lo quiero redirigir para que se logee
+                return res.redirect("/users/profile/"+info.userId)
             }).catch((err) => {
     
-            }); // Creando el usuario en la base de datos
+            });
         
-       
+       }
         
     },
     logout: (req , res) => {

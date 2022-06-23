@@ -20,6 +20,9 @@
 		<% } %>
 
 	<!-- Novedades -->
+	<% if (locals.errors) { %>
+		<p class="errorMessage"> <%= locals.errors.message %>  </p>
+	   <% } %>
 	<div class="registro">
 		<div class="row">
 			<div class="cajainput">
@@ -48,7 +51,7 @@
 				</div>
 				<input type="hidden" name="userId" value="<%= user.id %>">
 				<input type="hidden" name="imgVieja" value="<%= user.img %>">
-				<button type="text" class="submit">Editar perfil</button>
+				<button type="text" class="submit">Submit</button>
 			</form>
 		</h2>
 
