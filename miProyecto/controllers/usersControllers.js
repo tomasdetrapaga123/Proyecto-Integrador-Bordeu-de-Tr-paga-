@@ -147,30 +147,6 @@ const userController = {
     editar: (req , res) => {     
         let info = req.body; 
        
-            // let usuario = {
-           
-            //     username : info.username, 
-            //     email : info.email,
-            //     password : bcrypt.hashSync(info.password, 10),
-            //     birthday: info.birthday,
-            //     img : "",
-            //     updated_at : new Date(), // new Date() es darle la fecha del dia de hoy
-            // }
-            
-            // if (!req.file && info.imgVieja) {
-            //     usuario.img= info.imgVieja
-            // }else if(!req.file){
-            //     usuario.img= "default-image.png"
-            // }else{
-
-            //     usuario.img= req.file.filename
-            // }
-            // /* Almacenando el registro del usuario */
-            // user.update(usuario,{
-            //     where:{
-            //         id:info.userId
-            //     }
-            // } )
             let errors = {};
 
             if (info.username == "") {
